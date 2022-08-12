@@ -1,0 +1,12 @@
+{
+  "name": "azure-function",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "func start"
+  },
+  "dependencies": {
+    "@azure/data-tables": "^13.1.2"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "name": "queueTrigger",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "test-queue-items",
+      "connection": "APP_STORAGE_ACCOUNT_CONNECTION"
+    }
+  ]
+}
