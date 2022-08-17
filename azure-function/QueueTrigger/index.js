@@ -21,7 +21,10 @@ module.exports = async function (context, myQueueItem) {
   const testEntity = {
     partitionKey: process.env.WEBSITE_SITE_NAME || 'localhost',
     rowKey: context.invocationId + '-' + versionString + '-' + process.env.TEST,
-    serverName: process.env.CONTAINER_NAME || 'localhost', // 5AF3CA72-637958735555355238 = CloudRole Instance ID = The cloud role instance tells us which specific server the cloud role is running on. This is important when scaling out your application
+    serverName: process.env.CONTAINER_NAME || process.env.WEBSITE_INSTANCE_ID || 'localhost',
+    // process.env.CONTAINER_NAME = 5AF3CA72-637958735555355238 = CloudRole Instance ID = The cloud role instance tells us which specific server the cloud role is running on. This is important when scaling out your application
+    // process.env.WEBSITE_INSTANCE_ID = 575394f1801e9e59b4eb7be761074996b76209fdcc7f0cdc12f754792fc401cf
+    // sometimes CONTAINER_NAME has a value sometimes WEBSITE_INSTANCE_ID has a value
     funcStart,
     funcEnd,
     messageTime,
